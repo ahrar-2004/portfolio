@@ -1,4 +1,5 @@
 import React from "react";
+import { HashLink as Link } from "react-router-hash-link"; // Import HashLink
 
 function Home() {
   return (
@@ -19,7 +20,7 @@ function Home() {
         {/* Buttons */}
         <div className="mt-6 flex flex-col md:flex-row gap-4">
           <button className="px-6 py-2 text-lg font-semibold bg-green-500 text-black rounded-lg shadow-md transition transform hover:scale-110 hover:bg-green-400">
-            Contact Me
+            <Link smooth to="#contact">Contact Me</Link>
           </button>
           <button className="px-6 py-2 text-lg font-semibold bg-pink-500 text-black rounded-lg shadow-md transition transform hover:scale-110 hover:bg-pink-400">
             Download Resume
@@ -29,7 +30,7 @@ function Home() {
 
       {/* Right Section - Profile Image */}
       <div className="md:w-1/2 flex justify-center mt-10 md:mt-0">
-        <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-lg overflow-hidden border-4 border-pink-500 ">
+        <div className="relative w-72 h-72 md:w-96 md:h-96 rounded-lg overflow-hidden border-4  ">
           <img src="/images/pfpImg.png" alt="Profile" className="w-full h-full object-cover" />
         </div>
       </div>

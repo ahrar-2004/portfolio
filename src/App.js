@@ -1,30 +1,28 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom"; // ✅ Import BrowserRouter
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import About from "./components/About";
 import Projects from "./components/Projects";
 import Services from "./components/Services";
 import Education from "./components/Education";
-import Hobby from "./components/Hobby";
-import Contact from "./components/Contact";
 
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 function App() {
   return (
-    <Router>
+    <Router> {/* ✅ Wrap everything inside Router */}
       <Navbar />
       
-      
-      <Routes>
-        <Route path="/home" element={<Home/>} />
-        <Route path="/about" element={<About />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/services" element={<Services />} />
-      
-        <Route path="/education" element={<Education />} />
-        <Route path="/hobby" element={<Hobby />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+      {/* Sections must have IDs for smooth scrolling */}
+      <section id="home"><Home /></section>
+      <section id="about"><About /></section>
+      <section id="projects"><Projects /></section>
+      <section id="services"><Services /></section>
+      <section id="education"><Education /></section>
+     
+      <section id="contact"><Contact /></section>
+      <section id="footet"><Footer /></section>
     </Router>
   );
 }
