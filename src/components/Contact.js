@@ -42,23 +42,23 @@ function Contact() {
   };
 
   return (
-    <div className="flex flex-col items-center min-h-screen bg-black text-white px-8 py-12">
+    <div className="flex flex-col items-center min-h-screen bg-black text-white px-6 md:px-12 py-12">
       {/* Heading */}
-      <h1 className="text-5xl font-bold mb-12 text-center text-neon-green">
+      <h1 className="text-4xl sm:text-5xl font-bold mb-8 text-center text-neon-green">
         Connect with Me
       </h1>
 
       {/* Main Content */}
-      <div className="flex flex-col md:flex-row justify-between w-full max-w-5xl">
+      <div className="flex flex-col md:flex-row justify-between w-full max-w-5xl gap-8">
         {/* Left Side - Contact Info */}
-        <div className="md:w-1/3 text-left transform -translate-x-5">
-          <h2 className="text-4xl font-bold mb-4 text-gradient">Let's Talk</h2>
+        <div className="md:w-1/3 text-center md:text-left">
+          <h2 className="text-3xl font-bold mb-4 text-gradient">Let's Talk</h2>
           <p className="text-gray-400 mb-6">
             I'm currently available for projects. Feel free to message me.
           </p>
 
           <div className="space-y-4">
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-3 justify-center md:justify-start">
               <FaEnvelope className="text-neon-green" />
               <a
                 href="mailto:ahmadaliahrar@gmail.com"
@@ -67,15 +67,15 @@ function Contact() {
                 ahmadaliahrar@gmail.com
               </a>
             </div>
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-3 justify-center md:justify-start">
               <FaPhone className="text-neon-green" />
               <span>+923184875361</span>
             </div>
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-3 justify-center md:justify-start">
               <FaMapMarkerAlt className="text-neon-green" />
               <span>Toba Tek Singh, Pakistan</span>
             </div>
-            <div className="flex space-x-4 text-2xl mt-4">
+            <div className="flex justify-center md:justify-start space-x-4 text-2xl mt-4">
               <a
                 href="https://github.com/ahrar-2004"
                 target="_blank"
@@ -97,69 +97,70 @@ function Contact() {
         </div>
 
         {/* Right Side - Contact Form */}
-        <div className="md:w-2/3 bg-gray-900 p-8 rounded-lg shadow-lg w-full max-w-lg transform translate-x-5">
-          <h2 className="text-3xl font-semibold text-white mb-4">
-            Get in Touch
-          </h2>
-          <form onSubmit={handleSubmit}>
-            <div className="mb-4">
-              <label className="block text-gray-300 mb-2">Your Name</label>
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 bg-gray-800 text-white rounded-md border border-gray-600 focus:border-neon-green outline-none"
-                placeholder="Enter your name"
-              />
-            </div>
+{/* Right Side - Contact Form */}
+<div className="md:w-2/3 w-full max-w-lg bg-gray-900 p-6 sm:p-8 rounded-lg shadow-lg mx-auto">
+  <h2 className="text-2xl sm:text-3xl font-semibold text-white mb-4 text-center">
+    Get in Touch
+  </h2>
+  <form onSubmit={handleSubmit} className="space-y-4">
+    <div>
+      <label className="block text-gray-300 mb-2">Your Name</label>
+      <input
+        type="text"
+        name="name"
+        value={formData.name}
+        onChange={handleChange}
+        required
+        className="w-full px-4 py-2 bg-gray-800 text-white rounded-md border border-gray-600 focus:border-neon-green outline-none"
+        placeholder="Enter your name"
+      />
+    </div>
 
-            <div className="mb-4">
-              <label className="block text-gray-300 mb-2">Your Email</label>
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 bg-gray-800 text-white rounded-md border border-gray-600 focus:border-neon-green outline-none"
-                placeholder="Enter your email"
-              />
-            </div>
+    <div>
+      <label className="block text-gray-300 mb-2">Your Email</label>
+      <input
+        type="email"
+        name="email"
+        value={formData.email}
+        onChange={handleChange}
+        required
+        className="w-full px-4 py-2 bg-gray-800 text-white rounded-md border border-gray-600 focus:border-neon-green outline-none"
+        placeholder="Enter your email"
+      />
+    </div>
 
-            <div className="mb-4">
-              <label className="block text-gray-300 mb-2">
-                Write your message here
-              </label>
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 bg-gray-800 text-white rounded-md border border-gray-600 focus:border-neon-green outline-none"
-                rows="4"
-                placeholder="Enter your message"
-              ></textarea>
-            </div>
+    <div>
+      <label className="block text-gray-300 mb-2">Message</label>
+      <textarea
+        name="message"
+        value={formData.message}
+        onChange={handleChange}
+        required
+        className="w-full px-4 py-2 bg-gray-800 text-white rounded-md border border-gray-600 focus:border-neon-green outline-none"
+        rows="4"
+        placeholder="Enter your message"
+      ></textarea>
+    </div>
 
-            <button
-              type="submit"
-              className="w-full bg-gray-200 text-black font-semibold py-2 rounded-md shadow-md transition transform hover:scale-105"
-            >
-              Submit now
-            </button>
+    <button
+      type="submit"
+      className="w-full bg-gray-200 text-black font-semibold py-2 rounded-md shadow-md transition-transform duration-200 hover:scale-105"
+    >
+      Submit Now
+    </button>
 
-            {success && (
-              <p className="text-green-400 mt-3">Message sent successfully!</p>
-            )}
-            {error && (
-              <p className="text-red-500 mt-3">
-                Failed to send message. Try again later.
-              </p>
-            )}
-          </form>
-        </div>
+    {success && (
+      <p className="text-green-400 mt-3 text-center">Message sent successfully!</p>
+    )}
+    {error && (
+      <p className="text-red-500 mt-3 text-center">
+        Failed to send message. Try again later.
+      </p>
+    )}
+  </form>
+</div>
+
+
       </div>
     </div>
   );
