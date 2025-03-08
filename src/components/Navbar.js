@@ -27,7 +27,7 @@ const Navbar = () => {
         >
           {[
             { name: "Home", to: "#home" },
-            { name: "About Me", to: "#about" },
+            { name: "Experience", to: "#experience" },
             { name: "My Projects", to: "#projects" },
             { name: "Services", to: "#services" },
             { name: "Education", to: "#education" },

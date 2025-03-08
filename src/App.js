@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router } from "react-router-dom"; // ✅ Import BrowserRouter
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
-import About from "./components/About";
+import Experience from "./components/Experience"
 import Projects from "./components/Projects";
 import Services from "./components/Services";
 import Education from "./components/Education";
@@ -16,7 +16,7 @@ function App() {
       
       {/* Sections must have IDs for smooth scrolling */}
       <section id="home"><Home /></section>
-      <section id="about"><About /></section>
+      <section id="experience"><Experience /></section>
       <section id="projects"><Projects /></section>
       <section id="services"><Services /></section>
       <section id="education"><Education /></section>

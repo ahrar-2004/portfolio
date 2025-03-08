@@ -3,43 +3,36 @@ import emailjs from "emailjs-com";
 import { FaEnvelope, FaGithub, FaLinkedin, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 
 function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const [result, setResult] = useState("");
 
-  const [success, setSuccess] = useState(false);
-  const [error, setError] = useState(false);
+const onSubmit = async (event) => {
+  event.preventDefault();
+  setResult("Sending...");
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const formData = new FormData(event.target);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  // Ensure reply_to (email) is included
+  formData.append("reply_to", event.target.email.value);
 
-    emailjs
-      .send(
-        "your_service_id",
-        "your_template_id",
-        formData,
-        "your_user_id"
-      )
-      .then(
-        (response) => {
-          console.log("Email sent successfully!", response);
-          setSuccess(true);
-          setError(false);
-          setFormData({ name: "", email: "", message: "" });
-        },
-        (error) => {
-          console.error("Error sending email:", error);
-          setError(true);
-          setSuccess(false);
-        }
-      );
-  };
+  emailjs
+    .sendForm(
+      "service_5y2p6i5", // Replace with your EmailJS service ID
+      "template_og57vly", // Replace with your EmailJS template ID
+      event.target,
+      "YzwInXni4x-u92c5y" // Replace with your EmailJS public key
+    )
+    .then(
+      (response) => {
+        console.log("Success:", response);
+        setResult("Form Submitted Successfully!");
+        event.target.reset();
+      },
+      (error) => {
+        console.log("Failed:", error);
+        setResult("Failed to send message. Try again later.");
+      }
+    );
+};
 
   return (
     <div className="flex flex-col items-center min-h-screen bg-black text-white px-6 md:px-12 py-12">
@@ -60,10 +53,7 @@ function Contact() {
           <div className="space-y-4">
             <div className="flex items-center space-x-3 justify-center md:justify-start">
               <FaEnvelope className="text-neon-green" />
-              <a
-                href="mailto:ahmadaliahrar@gmail.com"
-                className="hover:text-neon-green transition"
-              >
+              <a href="mailto:ahmadaliahrar@gmail.com" className="hover:text-neon-green transition">
                 ahmadaliahrar@gmail.com
               </a>
             </div>
@@ -97,70 +87,54 @@ function Contact() {
         </div>
 
         {/* Right Side - Contact Form */}
-{/* Right Side - Contact Form */}
-<div className="md:w-2/3 w-full max-w-lg bg-gray-900 p-6 sm:p-8 rounded-lg shadow-lg mx-auto">
-  <h2 className="text-2xl sm:text-3xl font-semibold text-white mb-4 text-center">
-    Get in Touch
-  </h2>
-  <form onSubmit={handleSubmit} className="space-y-4">
-    <div>
-      <label className="block text-gray-300 mb-2">Your Name</label>
-      <input
-        type="text"
-        name="name"
-        value={formData.name}
-        onChange={handleChange}
-        required
-        className="w-full px-4 py-2 bg-gray-800 text-white rounded-md border border-gray-600 focus:border-neon-green outline-none"
-        placeholder="Enter your name"
-      />
-    </div>
+        <div className="md:w-2/3 w-full max-w-lg bg-gray-900 p-6 sm:p-8 rounded-lg shadow-lg mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-white mb-4 text-center">
+            Get in Touch
+          </h2>
+          <form onSubmit={onSubmit} className="space-y-4">
+            <div>
+              <label className="block text-gray-300 mb-2">Your Name</label>
+              <input
+                type="text"
+                name="from_name"
+                required
+                className="w-full px-4 py-2 bg-gray-800 text-white rounded-md border border-gray-600 focus:border-neon-green outline-none"
+                placeholder="Enter your name"
+              />
+            </div>
 
-    <div>
-      <label className="block text-gray-300 mb-2">Your Email</label>
-      <input
-        type="email"
-        name="email"
-        value={formData.email}
-        onChange={handleChange}
-        required
-        className="w-full px-4 py-2 bg-gray-800 text-white rounded-md border border-gray-600 focus:border-neon-green outline-none"
-        placeholder="Enter your email"
-      />
-    </div>
+            <div>
+              <label className="block text-gray-300 mb-2">Your Email</label>
+              <input
+                type="email"
+                name="reply_to"
+                required
+                className="w-full px-4 py-2 bg-gray-800 text-white rounded-md border border-gray-600 focus:border-neon-green outline-none"
+                placeholder="Enter your email"
+              />
+            </div>
 
-    <div>
-      <label className="block text-gray-300 mb-2">Message</label>
-      <textarea
-        name="message"
-        value={formData.message}
-        onChange={handleChange}
-        required
-        className="w-full px-4 py-2 bg-gray-800 text-white rounded-md border border-gray-600 focus:border-neon-green outline-none"
-        rows="4"
-        placeholder="Enter your message"
-      ></textarea>
-    </div>
+            <div>
+              <label className="block text-gray-300 mb-2">Message</label>
+              <textarea
+                name="message"
+                required
+                className="w-full px-4 py-2 bg-gray-800 text-white rounded-md border border-gray-600 focus:border-neon-green outline-none"
+                rows="4"
+                placeholder="Enter your message"
+              ></textarea>
+            </div>
 
-    <button
-      type="submit"
-      className="w-full bg-gray-200 text-black font-semibold py-2 rounded-md shadow-md transition-transform duration-200 hover:scale-105"
-    >
-      Submit Now
-    </button>
+            <button
+              type="submit"
+              className="w-full bg-gray-200 text-black font-semibold py-2 rounded-md shadow-md transition-transform duration-200 hover:scale-105"
+            >
+              Submit Now
+            </button>
 
-    {success && (
-      <p className="text-green-400 mt-3 text-center">Message sent successfully!</p>
-    )}
-    {error && (
-      <p className="text-red-500 mt-3 text-center">
-        Failed to send message. Try again later.
-      </p>
-    )}
-  </form>
-</div>
-
-
+            {result && <p className="text-center mt-3">{result}</p>}
+          </form>
+        </div>
       </div>
     </div>
   );
