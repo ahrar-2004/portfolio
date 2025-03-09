@@ -4,7 +4,7 @@ import { FaHtml5, FaJs, FaReact } from "react-icons/fa";
 
 function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white px-6 md:px-12 py-12">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white px-6 md:px-12 py-12 pt-20">
       {/* Profile Section */}
       <div className="flex flex-col md:flex-row items-center w-full max-w-6xl gap-10">
         {/* Profile Image */}
@@ -50,12 +50,12 @@ function Home() {
               </button>
             </Link>
             <a
-  href="/images/cv.pdf"
-  download="Ahmad_Ali_Ahrar_CV.pdf"
-  className="px-6 py-2 text-lg font-semibold bg-white text-black rounded-lg shadow-md transition-transform duration-300 hover:scale-110 text-center"
->
-  Download Resume
-</a>
+              href="/images/cv.pdf"
+              download="Ahmad_Ali_Ahrar_CV.pdf"
+              className="px-6 py-2 text-lg font-semibold bg-white text-black rounded-lg shadow-md transition-transform duration-300 hover:scale-110 text-center"
+            >
+              Download Resume
+            </a>
           </div>
         </div>
       </div>
