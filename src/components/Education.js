@@ -8,9 +8,10 @@ function Education() {
       
       <div className="text-gray-300 text-lg max-w-2xl">
         <p className="mb-4">
-          🎓 I completed my <span className="text-neon-green font-bold">Matriculation</span> from 
-          <span className="text-neon-pink"> Al-Ain Public School (2020-2022)</span> and secured 
-          <span className="text-neon-blue font-bold"> 1013/1100</span> marks.
+        🎓 Currently, I'm pursuing a <span className="text-neon-green font-bold">BS in Computer Science</span> 
+          (2024-2028) at <span className="text-neon-pink"> University of Agriculture, Faisalabad</span>. 
+          I secured a <span className="text-neon-blue font-bold">3.37 GPA</span> in my first semester.
+        
         </p>
         
         <p className="mb-4">
@@ -20,9 +21,9 @@ function Education() {
         </p>
 
         <p className="mb-4">
-          🎓 Currently, I'm pursuing a <span className="text-neon-green font-bold">BS in Computer Science</span> 
-          (2024-2028) at <span className="text-neon-pink"> University of Agriculture, Faisalabad</span>. 
-          I secured a <span className="text-neon-blue font-bold">3.37 GPA</span> in my first semester.
+        🎓 I completed my <span className="text-neon-green font-bold">Matriculation</span> from 
+          <span className="text-neon-pink"> Al-Ain Public School (2020-2022)</span> and secured 
+          <span className="text-neon-blue font-bold"> 1013/1100</span> marks.
         </p>
       </div>
     </div>

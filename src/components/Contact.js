@@ -54,10 +54,10 @@ function Contact() {
                 ahmadaliahrar@gmail.com
               </a>
             </div>
-            <div className="flex items-center space-x-3 justify-center md:justify-start">
+            {/* <div className="flex items-center space-x-3 justify-center md:justify-start">
               <FaPhone className="text-neon-green" />
               <span>+923184875361</span>
-            </div>
+            </div> */}
             <div className="flex items-center space-x-3 justify-center md:justify-start">
               <FaMapMarkerAlt className="text-neon-green" />
               <span>Toba Tek Singh, Pakistan</span>

@@ -19,21 +19,21 @@ function Home() {
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-montserrat leading-tight">
             Ahmad Ali Ahrar
           </h1>
-          <h2 className="text-lg sm:text-xl md:text-2xl text-gray-400 mt-2">Web Developer & Editor</h2>
+          <h2 className="text-lg sm:text-xl md:text-2xl text-gray-400 mt-2">Front-end Developer</h2>
           
           <p className="text-gray-300 text-base sm:text-lg leading-relaxed mt-4">
-            I'm <span className="text-neon-green font-bold">Ahmad Ali Ahrar</span>, a passionate web developer and editor with a keen eye for design.
-            I specialize in <span className="text-neon-pink">video editing, thumbnail and logo design</span>, and creating sleek, responsive websites.
-            Currently, I'm pursuing a <span className="text-neon-blue">BS in Computer Science</span> at the University of Agriculture, Faisalabad.
-            I thrive on creativity and functionality, constantly learning new tools and technologies to enhance my skills.
-          </p>
+  I'm <span className="text-neon-green font-bold">Ahmad Ali Ahrar</span>, a passionate front-end developer dedicated to building sleek and responsive websites.  
+  Currently, I'm pursuing a <span className="text-neon-blue">BS in Computer Science</span> at the University of Agriculture, Faisalabad.  
+  I thrive on creativity and functionality, constantly learning new tools and technologies to enhance my coding skills.
+</p>
+
 
           {/* Tech Stack Icons */}
           <div className="flex justify-center md:justify-start space-x-6 sm:space-x-10 mt-6">
             {[
               { icon: <FaHtml5 className="text-orange-500 text-5xl sm:text-6xl" />, label: "HTML" },
               { icon: <FaJs className="text-yellow-500 text-5xl sm:text-6xl" />, label: "JavaScript" },
-              { icon: <FaReact className="text-blue-400 text-5xl sm:text-6xl" />, label: "React" },
+              { icon: <FaReact className="text-blue-400 text-5xl sm:text-6xl" />, label: "React JS" },
             ].map((item, index) => (
               <div key={index} className="flex flex-col items-center hover:scale-110 transition-transform duration-300">
                 {item.icon}
