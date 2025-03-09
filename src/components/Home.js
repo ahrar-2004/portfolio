@@ -49,9 +49,13 @@ function Home() {
                 Contact Me
               </button>
             </Link>
-            <button className="px-6 py-2 text-lg font-semibold bg-white text-black rounded-lg shadow-md transition-transform duration-300 hover:scale-110">
-              Download Resume
-            </button>
+            <a
+  href="/images/cv.pdf"
+  download="Ahmad_Ali_Ahrar_CV.pdf"
+  className="px-6 py-2 text-lg font-semibold bg-white text-black rounded-lg shadow-md transition-transform duration-300 hover:scale-110 text-center"
+>
+  Download Resume
+</a>
           </div>
         </div>
       </div>
