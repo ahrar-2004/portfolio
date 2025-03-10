@@ -9,11 +9,11 @@ const Navbar = () => {
 
   return (
     <nav className="bg-black text-white p-4 shadow-lg border-b border-gray-700 fixed top-0 left-0 w-full z-50">
-      <div className="max-w-6xl mx-auto flex justify-between items-center px-6 md:px-8">
+      <div className="max-w-6xl mx-auto flex justify-around items-center px-6 md:px-8 relative">
         
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-3xl focus:outline-none transition-transform duration-200"
+          className="md:hidden text-3xl absolute left-4 focus:outline-none transition-transform duration-200"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -27,7 +27,8 @@ const Navbar = () => {
             open ? "opacity-100 h-auto py-4" : "opacity-0 h-0 md:opacity-100 md:h-auto"
           } md:flex md:gap-8 text-center`}
         >
-          {[{ name: "Home", to: "#home" },
+          {[
+            { name: "Home", to: "#home" },
             { name: "Experience", to: "#experience" },
             { name: "My Projects", to: "#projects" },
             { name: "Services", to: "#services" },
