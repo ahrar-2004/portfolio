@@ -22,12 +22,12 @@ function Home() {
           <h2 className="text-lg sm:text-xl md:text-2xl text-gray-400 mt-2">Front-end Developer</h2>
           
           <p className="text-gray-300 text-base sm:text-lg leading-relaxed mt-4">
-  I'm <span className="text-neon-green font-bold">Ahmad Ali Ahrar</span>, a passionate front-end developer dedicated to building sleek and responsive websites.  
-  Currently, I'm pursuing a <span className="text-neon-blue">BS in Computer Science</span> at the University of Agriculture, Faisalabad.  
-  I thrive on creativity and functionality, constantly learning new tools and technologies to enhance my coding skills.
-</p>
+           I'm <span className="text-neon-green font-bold">Ahmad Ali Ahrar</span>, a passionate front-end developer dedicated to building sleek and responsive websites.  
+           Currently, I'm pursuing a <span className="text-neon-blue">BS in Computer Science</span> at the University of Agriculture, Faisalabad.  
+           I thrive on creativity and functionality, constantly learning new tools and technologies to enhance my coding skills.
+          </p>
 
-
+ 
           {/* Tech Stack Icons */}
           <div className="flex justify-center md:justify-start space-x-6 sm:space-x-10 mt-6">
             {[
