@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
-import { FaEnvelope, FaGithub, FaLinkedin, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
+import { FaEnvelope, FaGithub, FaLinkedin,  FaMapMarkerAlt } from "react-icons/fa";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -19,11 +19,15 @@ function Contact() {
     setStatus({ loading: true, message: "" });
 
     try {
+      const serviceID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+      const templateID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+      const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+
       const response = await emailjs.sendForm(
-        "service_5y2p6i5", // Replace with your EmailJS service ID
-        "template_og57vly", // Replace with your EmailJS template ID
+        serviceID,
+        templateID,
         e.target,
-        "YzwInXni4x-u92c5y" // Replace with your EmailJS public key
+        publicKey
       );
 
       console.log("Success:", response);
