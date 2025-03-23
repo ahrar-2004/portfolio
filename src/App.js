@@ -9,6 +9,7 @@ import Education from "./components/Education";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import { Analytics } from "@vercel/analytics/react";
+import ScrollToTop from "./ScrollToTop";
 
 
 
@@ -16,6 +17,7 @@ function App() {
   return (
     <React.Fragment> {/* ✅ Wrap everything inside a single parent */}
       <Router> {/* ✅ Wrap everything inside Router */}
+      <ScrollToTop />
         <Navbar />
         
         {/* Sections must have IDs for smooth scrolling */}
@@ -26,7 +28,7 @@ function App() {
         <section id="education"><Education /></section>
        
         <section id="contact"><Contact /></section>
-        <section id="footet"><Footer /></section>
+        <section id="footer"><Footer /></section>
       </Router>
       <Analytics />
     </React.Fragment>
